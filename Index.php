@@ -43,7 +43,7 @@
 	?>
 
 
-  <?php include 'modal/modal.php'; ?>
+  
   
 
 
