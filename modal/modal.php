@@ -27,7 +27,6 @@
 
         
       </div>
-     
     </div>
   </div>
 </div>
@@ -63,7 +62,6 @@
 
         
       </div>
-     
     </div>
   </div>
 </div>
@@ -91,7 +89,6 @@
 
           
       </div>
-     
     </div>
   </div>
 </div>
@@ -121,7 +118,6 @@
 
         
       </div>
-     
     </div>
   </div>
 </div>
@@ -150,9 +146,7 @@
 
             </div>
 
-       
       </div>
-     
     </div>
   </div>
 </div>
@@ -180,7 +174,6 @@
 
           
       </div>
-     
     </div>
   </div>
 </div>
@@ -239,7 +232,6 @@
                   <button type="submit" class="btn btn-danger" data-bs-dismiss="modal" id="eliminarInventario">eliminar</button>
     
       </div>
-     
     </div>
   </div>
 </div>
@@ -259,9 +251,7 @@
                 <label for="nombre_producto" class="form-label">Producto:</label>
 
                 <select name="nombre_producto_Inventario" id="nombre_producto_Inventario" class="form-select" required>
-                  <option value="">Selecionar...</option>
-                  <?php foreach ($productosFetch as $pro){ ?>
-                      <option value="<?php echo $pro["Id_producto"]; ?>"> <?php echo $pro["Nombre_producto"] ?></option> <?php } ?>
+                  <option value="">Seleccione...</option>
                 </select>
             </div>
 
@@ -270,8 +260,6 @@
 
                 <select name="nombre_bodega_Inventario" id="nombre_bodega_Inventario" class="form-select" required>
                   <option value="">Selecionar...</option>
-                  <?php foreach ($bodegasFetch as $bod){ ?>
-                      <option value="<?php echo $bod["Id_bodega"]; ?>"> <?php echo $bod["Nombre"] ?></option> <?php } ?>
                 </select>
               </div>
 
@@ -288,7 +276,6 @@
 
         
       </div>
-     
     </div>
   </div>
 </div>
