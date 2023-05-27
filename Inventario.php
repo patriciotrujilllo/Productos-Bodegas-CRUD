@@ -45,23 +45,12 @@
         </div>
 
     </div>
-    
-    <?php
-
+    <?php 
+        include 'modal/modal.php'; 
         include('modulos/conexion.php');
-
-        $stmt = $conexion->prepare('SELECT * from productos');
-        $stmt->execute();
-        $productosFetch = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        $stmt2 = $conexion->prepare('SELECT * from bodegas');
-        $stmt2->execute();
-        $bodegasFetch = $stmt2->fetchAll(PDO::FETCH_ASSOC);
-
-    ?> 
-    
-    <?php include 'modal/modal.php'; ?>   
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script> 
+    ?>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
+    <script src="./script/obtenerProductosBodegas.js"></script>
     <script src="modulos/Inventario/Controlador/controlador.js"></script>                               
     <script src="./script/inventario.js"></script>
     
