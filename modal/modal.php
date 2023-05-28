@@ -104,7 +104,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        
+        <form action="#" id="formAgregarBodega">
             <div class="mb-3">
                 <label for="nombre_bodega" class="form-label">Nombre bodega:</label>
                 <input type="text" name="nombre_bodega" id="nombre_bodega" class="form-control" required>
@@ -115,7 +115,7 @@
                 <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" id="guardarBodega">Guardar</button>
 
             </div>
-
+        </form>
         
       </div>
     </div>

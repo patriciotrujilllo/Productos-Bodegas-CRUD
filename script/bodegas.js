@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     let editaModal = document.querySelector('#Modal_Bodegas_editar')
     let eliminaModal = document.querySelector('#Modal_Bodegas_eliminar')
+    let formAgregarBodega = document.querySelector('#formAgregarBodega')
 
     editaModal.addEventListener('shown.bs.modal', event => {
         let button = event.relatedTarget
@@ -30,9 +31,11 @@ document.addEventListener("DOMContentLoaded", function () {
         eliminaModal.querySelector('.modal-footer #id_delete_2').value = id
     })
 
-    document.getElementById("guardarBodega").addEventListener("click", function () {
+    formAgregarBodega.addEventListener("submit", function (event) {
+        event.preventDefault();
+        let formdata = new FormData(formAgregarBodega);
         let newBodega = {
-            nombre: document.querySelector('.modal-body #nombre_bodega').value
+            nombre: formdata.get('nombre_bodega')
         };
         guardar(newBodega);
     });
