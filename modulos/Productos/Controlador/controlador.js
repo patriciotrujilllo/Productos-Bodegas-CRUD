@@ -1,34 +1,7 @@
 var productos = [];
 const url = 'modulos/Productos/Api/Api-Rest.php';
 
-function GetAll() {
-    axios({
-        method: 'GET',
-        url: url,
-        responseType: 'json'
-    }).then(res => {
-        this.productos = res.data;
-        llenarTabla();
-    }).catch(error => {
-        console.error(error);
-    })
-}
-
-function GetId(id) {
-    axios({
-        method: 'GET',
-        url: url + `?Id_producto=${id}`,
-        responseType: 'json'
-    }).then(res => {
-        this.productos = res.data;
-    }).catch(error => {
-        console.error(error);
-    })
-}
-
-GetAll();
-
-function llenarTabla() {
+const llenarTabla = () => {
     document.querySelector('#tablaProductos tbody').innerHTML = '';
     productos.forEach(producto => {
         document.querySelector('#tablaProductos tbody').innerHTML +=
@@ -48,7 +21,34 @@ function llenarTabla() {
     });
 }
 
-function eliminar(id) {
+const GetAll = () => {
+    axios({
+        method: 'GET',
+        url: url,
+        responseType: 'json'
+    }).then(res => {
+        this.productos = res.data;
+        llenarTabla();
+    }).catch(error => {
+        console.error(error);
+    })
+}
+
+const GetId = (id) => {
+    axios({
+        method: 'GET',
+        url: url + `?Id_producto=${id}`,
+        responseType: 'json'
+    }).then(res => {
+        this.productos = res.data;
+    }).catch(error => {
+        console.error(error);
+    })
+}
+
+GetAll();
+
+const eliminar = (id) => {
     axios({
         method: 'DELETE',
         url: url + `?Id_producto=${id}`,
@@ -60,7 +60,7 @@ function eliminar(id) {
     })
 }
 
-function actualizar(producto) {
+const actualizar = (producto) => {
     axios({
         method: 'PUT',
         url: url + `?Id_producto=${producto['id']}`,
@@ -73,7 +73,7 @@ function actualizar(producto) {
     })
 }
 
-function guardar(producto) {
+const guardar = (producto) => {
     axios({
         method: 'POST',
         url: url,

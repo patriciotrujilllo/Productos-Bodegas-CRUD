@@ -1,34 +1,7 @@
 var bodegas = [];
 const url = 'modulos/Bodegas/Api/Api-Rest.php';
 
-function GetAll() {
-    axios({
-        method: 'GET',
-        url: url,
-        responseType: 'json'
-    }).then(res => {
-        this.bodegas = res.data;
-        llenarTabla();
-    }).catch(error => {
-        console.error(error);
-    })
-}
-
-function GetId(id) {
-    axios({
-        method: 'GET',
-        url: url + `?Id_bodega=${id}`,
-        responseType: 'json'
-    }).then(res => {
-        this.bodegas = res.data;
-    }).catch(error => {
-        console.error(error);
-    })
-}
-
-GetAll();
-
-function llenarTabla() {
+const llenarTabla = () => {
     document.querySelector('#tablaBodegas tbody').innerHTML = '';
     bodegas.forEach(bodega => {
         document.querySelector('#tablaBodegas tbody').innerHTML +=
@@ -47,7 +20,34 @@ function llenarTabla() {
     });
 }
 
-function eliminar(id) {
+const GetAll = () => {
+    axios({
+        method: 'GET',
+        url: url,
+        responseType: 'json'
+    }).then(res => {
+        this.bodegas = res.data;
+        llenarTabla();
+    }).catch(error => {
+        console.error(error);
+    })
+}
+
+const GetId = (id) => {
+    axios({
+        method: 'GET',
+        url: url + `?Id_bodega=${id}`,
+        responseType: 'json'
+    }).then(res => {
+        this.bodegas = res.data;
+    }).catch(error => {
+        console.error(error);
+    })
+}
+
+GetAll();
+
+const eliminar = (id) => {
     axios({
         method: 'DELETE',
         url: url + `?Id_bodega=${id}`,
@@ -59,7 +59,7 @@ function eliminar(id) {
     })
 }
 
-function actualizar(bodega) {
+const actualizar = (bodega) => {
     axios({
         method: 'PUT',
         url: url + `?Id_bodega=${bodega['id']}`,
@@ -72,7 +72,7 @@ function actualizar(bodega) {
     })
 }
 
-function guardar(bodega) {
+const guardar = (bodega) => {
     axios({
         method: 'POST',
         url: url,

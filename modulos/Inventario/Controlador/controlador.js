@@ -1,34 +1,7 @@
 var inventario = [];
 const url = 'modulos/Inventario/Api/Api-Rest.php';
 
-function GetAll() {
-    axios({
-        method: 'GET',
-        url: url,
-        responseType: 'json'
-    }).then(res => {
-        this.inventario = res.data;
-        llenarTabla();
-    }).catch(error => {
-        console.error(error);
-    })
-}
-
-function GetId(id) {
-    axios({
-        method: 'GET',
-        url: url + `?id=${id}`,
-        responseType: 'json'
-    }).then(res => {
-        this.inventario = res.data;
-    }).catch(error => {
-        console.error(error);
-    })
-}
-
-GetAll();
-
-function llenarTabla() {
+const llenarTabla = () => {
     document.querySelector('#tablaInventario tbody').innerHTML = '';
     inventario.forEach(inventory => {
         document.querySelector('#tablaInventario tbody').innerHTML +=
@@ -49,7 +22,34 @@ function llenarTabla() {
     });
 }
 
-function eliminar(id) {
+const GetAll = () => {
+    axios({
+        method: 'GET',
+        url: url,
+        responseType: 'json'
+    }).then(res => {
+        this.inventario = res.data;
+        llenarTabla();
+    }).catch(error => {
+        console.error(error);
+    })
+}
+
+const GetId = (id) => {
+    axios({
+        method: 'GET',
+        url: url + `?id=${id}`,
+        responseType: 'json'
+    }).then(res => {
+        this.inventario = res.data;
+    }).catch(error => {
+        console.error(error);
+    })
+}
+
+GetAll();
+
+const eliminar = (id) => {
     axios({
         method: 'DELETE',
         url: url + `?id=${id}`,
@@ -61,7 +61,7 @@ function eliminar(id) {
     })
 }
 
-function actualizar(inventario) {
+const actualizar = (inventario) => {
     axios({
         method: 'PUT',
         url: url + `?id=${inventario['id']}`,
@@ -74,7 +74,7 @@ function actualizar(inventario) {
     })
 }
 
-function guardar(inventario) {
+const guardar = (inventario) => {
     axios({
         method: 'POST',
         url: url,
