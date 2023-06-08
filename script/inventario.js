@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     let editaModal = document.querySelector('#Modal_inventario_editar')
     let eliminaModal = document.querySelector('#Modal_inventario_eliminar')
+    let agregarModal = document.querySelector('#Modal_Inventario')
 
     editaModal.addEventListener('shown.bs.modal', event => {
         let button = event.relatedTarget
@@ -42,7 +43,18 @@ document.addEventListener("DOMContentLoaded", function () {
         actualizar(actualizarInventario);
     });
 
-    document.getElementById("guardarInventario").addEventListener("click", function () {
+    const botonGuardar = document.getElementById('guardarInventario');
+    const selectElementProducto = document.getElementById('nombre_producto_Inventario');
+    const selectElementBodega = document.getElementById('nombre_bodega_Inventario');
+
+
+    agregarModal.addEventListener('hidden.bs.modal', function () {
+        selectElementProducto.innerHTML = '';
+        selectElementBodega.innerHTML = '';
+    });
+
+
+    botonGuardar.addEventListener("click", function () {
         let newInventario = {
             //el value del los nombres contienen la id
             Id_producto: document.querySelector('.modal-body #nombre_producto_Inventario').value,
@@ -50,7 +62,9 @@ document.addEventListener("DOMContentLoaded", function () {
             Stock: document.querySelector('.modal-body #stock_Inventario').value
 
         };
-        console.log(newInventario);
+        //console.log(newInventario);
         guardar(newInventario);
     });
+
+
 });
