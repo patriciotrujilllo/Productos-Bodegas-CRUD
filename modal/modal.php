@@ -9,23 +9,23 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        
-            <div class="mb-3">
-                <label for="nombre_producto" class="form-label">Nombre producto:</label>
-                <input type="text" name="nombre_producto" id="nombre_producto" class="form-control" required>
-            </div>
-            <div class="mb-3">
-                <label for="descripcion_producto" class="form-label">Descripción producto:</label>
-                <textarea type="text" name="descripcion_producto" id="descripcion_producto" class="form-control" required></textarea>
-            </div>
 
-            <div class="">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" id="btnGuardar">Guardar</button>
+        <div class="mb-3">
+          <label for="nombre_producto" class="form-label">Nombre producto:</label>
+          <input type="text" name="nombre_producto" id="nombre_producto" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label for="descripcion_producto" class="form-label">Descripción producto:</label>
+          <textarea type="text" name="descripcion_producto" id="descripcion_producto" class="form-control" required></textarea>
+        </div>
 
-            </div>
+        <div class="">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" id="btnGuardar">Guardar</button>
 
-        
+        </div>
+
+
       </div>
     </div>
   </div>
@@ -42,25 +42,25 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        
 
-          <input type="hidden" id="id" name="id">
-            <div class="mb-3">
-                <label for="actualizar_nombre_producto" class="form-label">Nombre producto:</label>
-                <input type="text" name="actualizar_nombre_producto" id="actualizar_nombre_producto" class="form-control" required>
-            </div>
-            <div class="mb-3">
-                <label for="actualizar_descripcion_producto" class="form-label">Descripción producto:</label>
-                <textarea type="text" name="actualizar_descripcion_producto" id="actualizar_descripcion_producto" class="form-control" required></textarea>
-            </div>
 
-            <div class="">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" id="ActualizarProductos">Actualizar</button>
+        <input type="hidden" id="id" name="id">
+        <div class="mb-3">
+          <label for="actualizar_nombre_producto" class="form-label">Nombre producto:</label>
+          <input type="text" name="actualizar_nombre_producto" id="actualizar_nombre_producto" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label for="actualizar_descripcion_producto" class="form-label">Descripción producto:</label>
+          <textarea type="text" name="actualizar_descripcion_producto" id="actualizar_descripcion_producto" class="form-control" required></textarea>
+        </div>
 
-            </div>
+        <div class="">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" id="ActualizarProductos">Actualizar</button>
 
-        
+        </div>
+
+
       </div>
     </div>
   </div>
@@ -80,14 +80,14 @@
       </div>
 
       <div class="modal-footer">
-        
-                  <input type="hidden" name="id" id="id_delete">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal" id="btnEjecutar">eliminar</button>
-        
-              
 
-          
+        <input type="hidden" name="id" id="id_delete">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" id="btnEjecutar">eliminar</button>
+
+
+
+
       </div>
     </div>
   </div>
@@ -105,18 +105,18 @@
       </div>
       <div class="modal-body">
         <form action="#" id="formAgregarBodega">
-            <div class="mb-3">
-                <label for="nombre_bodega" class="form-label">Nombre bodega:</label>
-                <input type="text" name="nombre_bodega" id="nombre_bodega" class="form-control" required>
-            </div>
+          <div class="mb-3">
+            <label for="nombre_bodega" class="form-label">Nombre bodega:</label>
+            <input type="text" name="nombre_bodega" id="nombre_bodega" class="form-control" required>
+          </div>
 
-            <div class="">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" id="guardarBodega">Guardar</button>
+          <div class="">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" id="guardarBodega">Guardar</button>
 
-            </div>
+          </div>
         </form>
-        
+
       </div>
     </div>
   </div>
@@ -132,19 +132,19 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        
 
-          <input type="hidden" id="id2" name="id2">
-            <div class="mb-3">
-                <label for="nombre_bodega" class="form-label">Nombre bodega:</label>
-                <input type="text" name="nombre_bodega" id="actualizar_nombre_bodega" class="form-control" required>
-            </div>
 
-            <div class="">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" id="actualizarBodega">Actualizar</button>
+        <input type="hidden" id="id2" name="id2">
+        <div class="mb-3">
+          <label for="nombre_bodega" class="form-label">Nombre bodega:</label>
+          <input type="text" name="nombre_bodega" id="actualizar_nombre_bodega" class="form-control" required>
+        </div>
 
-            </div>
+        <div class="">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" id="actualizarBodega">Actualizar</button>
+
+        </div>
 
       </div>
     </div>
@@ -165,14 +165,14 @@
       </div>
 
       <div class="modal-footer">
-        
-                  <input type="hidden" name="id" id="id_delete_2">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                  <button type="submit" class="btn btn-danger" data-bs-dismiss="modal" id="eliminarBodega">eliminar</button>
 
-              
+        <input type="hidden" name="id" id="id_delete_2">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="submit" class="btn btn-danger" data-bs-dismiss="modal" id="eliminarBodega">eliminar</button>
 
-          
+
+
+
       </div>
     </div>
   </div>
@@ -188,24 +188,24 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        
-        <input type="hidden" name="id" id="id"> 
-        
 
-            <div class="mb-3">
-                <label for="stock" class="form-label">Stock:</label>
-                <input type="text" name="stock" id="stock" class="form-control" required>
-            </div>
+        <input type="hidden" name="id" id="id">
 
-            <div class="">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" id="actualizarInventario">Guardar</button>
 
-            </div>
+        <div class="mb-3">
+          <label for="stock" class="form-label">Stock:</label>
+          <input type="text" name="stock" id="stock" class="form-control" required>
+        </div>
 
-        
+        <div class="">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" id="actualizarInventario">Guardar</button>
+
+        </div>
+
+
       </div>
-     
+
     </div>
   </div>
 </div>
@@ -226,11 +226,11 @@
       </div>
 
       <div class="modal-footer">
-        
-                  <input type="hidden" name="id" id="id">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                  <button type="submit" class="btn btn-danger" data-bs-dismiss="modal" id="eliminarInventario">eliminar</button>
-    
+
+        <input type="hidden" name="id" id="id">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="submit" class="btn btn-danger" data-bs-dismiss="modal" id="eliminarInventario">eliminar</button>
+
       </div>
     </div>
   </div>
@@ -246,35 +246,35 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        
-            <div class="mb-3">
-                <label for="nombre_producto" class="form-label">Producto:</label>
 
-                <select name="nombre_producto_Inventario" id="nombre_producto_Inventario" class="form-select" required>
-                  <option value="">Seleccione...</option>
-                </select>
-            </div>
+        <div class="mb-3">
+          <label for="nombre_producto" class="form-label">Producto:</label>
 
-            <div class="mb-3">
-                <label for="nombre_bodega_Inventario" class="form-label">Bodega:</label>
+          <select name="nombre_producto_Inventario" id="nombre_producto_Inventario" class="form-select" required>
+            <option value="">Seleccione...</option>
+          </select>
+        </div>
 
-                <select name="nombre_bodega_Inventario" id="nombre_bodega_Inventario" class="form-select" required>
-                  <option value="">Selecionar...</option>
-                </select>
-              </div>
+        <div class="mb-3">
+          <label for="nombre_bodega_Inventario" class="form-label">Bodega:</label>
 
-            <div class="mb-3">
-                <label for="stock" class="form-label">Stock:</label>
-                <input type="text" name="stock_Inventario" id="stock_Inventario" class="form-control" required>
-            </div>
+          <select name="nombre_bodega_Inventario" id="nombre_bodega_Inventario" class="form-select" required>
+            <option value="">Selecionar...</option>
+          </select>
+        </div>
 
-            <div class="">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="guardarInventario">Guardar</button>
+        <div class="mb-3">
+          <label for="stock" class="form-label">Stock:</label>
+          <input type="text" name="stock_Inventario" id="stock_Inventario" class="form-control" required>
+        </div>
 
-            </div>
+        <div class="">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="guardarInventario">Guardar</button>
 
-        
+        </div>
+
+
       </div>
     </div>
   </div>
