@@ -48,7 +48,7 @@ include_once("../../conexion.php");
                     }
                 }
 
-            }catch(PDOExeption $e){
+            }catch(PDOException $e){
                 echo "Error: ".$e->getMessage();
             }
         }       
@@ -59,10 +59,10 @@ include_once("../../conexion.php");
                         $stmt -> bindValue(':id',$id,PDO::PARAM_INT);
                         $stmt -> bindValue(':stock',$Stock,PDO::PARAM_INT);
                         $stmt->execute();
-                     
-                     } catch(PDOException $e){
+                
+                    } catch(PDOException $e){
                         echo "Error: ".$e->getMessage();
-                     }
+                    }
         }
                 
         public static function eliminarInventario($id){
@@ -72,8 +72,8 @@ include_once("../../conexion.php");
                         $stmt = $conexion->prepare('DELETE FROM inventario WHERE id = :id');
                         $stmt -> bindValue(':id',$id,PDO::PARAM_INT);
                         $stmt -> execute();
-                  
-                     }catch(PDOExeption $e){
+                
+                    }catch(PDOException $e){
                         echo "Error: ".$e->getMessage();
                     }
 
@@ -81,5 +81,3 @@ include_once("../../conexion.php");
                 
         }
     }
-
-?>
