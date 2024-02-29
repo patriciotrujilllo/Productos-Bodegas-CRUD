@@ -37,7 +37,7 @@
         break;
 			default:
 				// Cargar la vista predeterminada si no se proporciona un parámetro
-				require_once('Productos.php');
+				require_once('Bodegas.php');
 				break;
 		}
 	?>
