@@ -8,9 +8,10 @@ switch($_SERVER['REQUEST_METHOD']){
         $data = json_decode(file_get_contents('php://input'),true);
         //nota revisar si es necesario enviar las varibles a ambos(constructor y funcion)
         $producto = new Producto($data['nombre'],$data['descripcion']);
-        if($producto -> agregarProducto($data['nombre'],$data['descripcion'])){
+        $idProducto = $producto->agregarProducto($data['nombre'], $data['descripcion']);
+        if($idProducto > 0){
             http_response_code(201);
-            echo json_encode(['mensaje' => 'El producto se agrego correctamente.']);
+            echo json_encode(['id_producto' => $idProducto, 'mensaje' => 'El producto se agregó correctamente.']);
             exit;
         }
         
