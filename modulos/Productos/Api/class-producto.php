@@ -100,7 +100,7 @@ class Producto
                                 $stmt->bindValue(':descripcion', $descripcion, PDO::PARAM_STR);
 
                                 if ($stmt->execute()) {
-                                        //header('Location: ../../Index.php'); 
+                                        return $conexion->lastInsertId();
                                 }
                         }
                 } catch (PDOException $e) {
