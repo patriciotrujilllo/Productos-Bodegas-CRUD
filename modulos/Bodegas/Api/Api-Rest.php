@@ -7,10 +7,11 @@ switch($_SERVER['REQUEST_METHOD']){
     case 'POST':
         $data = json_decode(file_get_contents('php://input'),true);
         //nota revisar si es necesario enviar las varibles a ambos(constructor y funcion)
-        $bodega = new Bodega($data['nombre']);
-        if($bodega -> agregarBodega($data['nombre'])){
+        $bodega = new Bodega($data['nombreBodega']);
+        $idBodega = $bodega -> agregarBodega($data['nombreBodega']);
+        if($idBodega > 0) {
             http_response_code(201);
-            echo json_encode(['mensaje' => 'El bodega se agrego correctamente.']);
+            echo json_encode(['idBodega' => $idBodega, 'mensaje' => 'El producto se agregó correctamente.']);
             exit;
         }
         
@@ -40,11 +41,15 @@ switch($_SERVER['REQUEST_METHOD']){
         //$_GET = json_decode(file_get_contents('php://input'),true);
         if(isset($_GET['Id_bodega'])){
             $bodega = Bodega::eliminarBodega($_GET['Id_bodega']);
-            echo json_encode($bodega);
+            if ($bodega) {
+                echo json_encode('Se elimino elemento de la base de datos');
+            } else {
+                echo json_encode(['mensaje' => 'No se pudo eliminar el elemento de la base de datos.']);
+            }
             exit;
         }
         else{
-            echo json_encode(['mensaje' => 'no se pudo eliminar.']);
+            echo json_encode(['mensaje' => 'No se proporcionó un Id_bodega.']);
         }
         break;
 }
