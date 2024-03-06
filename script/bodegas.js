@@ -25,11 +25,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
     })
 
-    eliminaModal.addEventListener('shown.bs.modal', event => {
-        let button = event.relatedTarget
-        let id = button.getAttribute('data-bs-id')
-        eliminaModal.querySelector('.modal-footer #id_delete_2').value = id
+    // eliminaModal.addEventListener('shown.bs.modal', event => {
+    //     let button = event.relatedTarget
+    //     let id = button.getAttribute('data-bs-id')
+    //     eliminaModal.querySelector('.modal-footer #id_delete_2').value = id
+    // })
+
+    eliminaModal.addEventListener('shown.bs.modal', function (event) {
+        const idBodega = event.relatedTarget.getAttribute('data-bs-id')
+        document.getElementById('eliminarBodega').addEventListener('click', function () {
+            const row = document.querySelector(`#tablaBodegas tbody tr[data-bodega-id="${idBodega}"]`)
+            eliminarBodega({ id: idBodega, row })
+        })
     })
+
+    // eliminaModal.forEach(boton => {
+    //     boton.addEventListener('click', function (event) {
+    //         // Acciones a realizar cuando se hace clic en el botón
+    //         event.preventDefault()
+    //         console.log("Botón Eliminar clickeado");
+    //     })
+    // })
 
     formAgregarBodega.addEventListener("submit", function (event) {
         event.preventDefault();
@@ -37,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let newBodega = {
             nombre: formdata.get('nombre_bodega')
         };
-        guardar(newBodega);
+        guardar({ nombreBodega: newBodega });
     });
 
 
@@ -46,12 +62,6 @@ document.addEventListener("DOMContentLoaded", function () {
             id: bodega.Id_bodega,
             nombre: document.querySelector('.modal-body #actualizar_nombre_bodega').value
         };
-        actualizar(actualizarBodega);
-    });
-
-    document.getElementById("eliminarBodega").addEventListener("click", function () {
-        let variable = document.querySelector('.modal-footer #id_delete_2');
-        let valor = variable.value;
-        eliminar(valor);
-    });
-});
+        actualizar(actualizarBodega)
+    })
+})
