@@ -127,14 +127,15 @@ const actualizar = (bodega) => {
     })
 }
 
-const guardar = ({ nombreBodega }) => {
+const guardarBodega = (bodega) => {
     axios({
         method: 'POST',
         url: url,
         responseType: 'json',
-        data: nombreBodega
+        data: bodega
     }).then(res => {
-        createNodo({ nombreBodega, idBodega: res.data.idBodega })
+        console.log(bodega)
+        createNodo({ nombreBodega: bodega.nombre, idBodega: res.data.idBodega })
     }).catch(error => {
         console.error(error);
     })
