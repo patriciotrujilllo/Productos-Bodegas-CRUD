@@ -101,9 +101,11 @@ include_once("../../conexion.php");
                 //No esta la variable $sql por que se agrego directamente la peticion a &stmt
                 $stmt->bindValue(':id', $id, PDO::PARAM_INT);
                 $stmt->execute();
+                return $stmt->rowCount() > 0;
                 //header('Location: ../../Index.php'); 
                 } catch (PDOException $e) {
                 echo "Error: catch de eliminar" . $e->getMessage();
+                return false;
                 }
 
 
