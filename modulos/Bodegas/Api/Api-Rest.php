@@ -7,8 +7,8 @@ switch($_SERVER['REQUEST_METHOD']){
     case 'POST':
         $data = json_decode(file_get_contents('php://input'),true);
         //nota revisar si es necesario enviar las varibles a ambos(constructor y funcion)
-        $bodega = new Bodega($data['nombreBodega']);
-        $idBodega = $bodega -> agregarBodega($data['nombreBodega']);
+        $bodega = new Bodega($data['nombre']);
+        $idBodega = $bodega -> agregarBodega($data['nombre']);
         if($idBodega > 0) {
             http_response_code(201);
             echo json_encode(['idBodega' => $idBodega, 'mensaje' => 'El producto se agregó correctamente.']);
