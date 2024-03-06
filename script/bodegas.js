@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let newBodega = {
             nombre: formdata.get('nombre_bodega')
         };
-        guardar({ nombreBodega: newBodega });
+        guardarBodega(newBodega);
     });
 
 
