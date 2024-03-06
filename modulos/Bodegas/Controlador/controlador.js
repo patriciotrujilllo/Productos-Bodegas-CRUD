@@ -1,12 +1,6 @@
 let bodegas = [];
 const url = 'modulos/Bodegas/Api/Api-Rest.php';
-const tabla = document.querySelector('#tablaBodegas tbody')
-
-const llenarTabla = (bodegas) => {
-    bodegas.forEach(bodega => {
-        createNodo({ nombreBodega: bodega.Nombre, idBodega: bodega.Id_bodega })
-    });
-}
+const tablaBodega = document.querySelector('#tablaBodegas tbody')
 
 const createNodo = ({ nombreBodega, idBodega }) => {
 
@@ -70,8 +64,14 @@ const createNodo = ({ nombreBodega, idBodega }) => {
 
     //Se agrega la fila a la tabla
 
-    tabla.appendChild(row)
+    tablaBodega.appendChild(row)
 
+}
+
+const llenarTabla = (bodegas) => {
+    bodegas.forEach(bodega => {
+        createNodo({ nombreBodega: bodega.Nombre, idBodega: bodega.Id_bodega })
+    });
 }
 
 const GetAll = () => {
@@ -81,12 +81,13 @@ const GetAll = () => {
         responseType: 'json'
     }).then(res => {
         bodegas = res.data
-        console.log(bodegas)
         llenarTabla(bodegas)
     }).catch(error => {
         console.error(error);
     })
 }
+
+GetAll();
 
 const GetId = (id) => {
     axios({
@@ -100,15 +101,14 @@ const GetId = (id) => {
     })
 }
 
-GetAll();
-
-const eliminar = (id) => {
+const eliminarBodega = ({ id, row }) => {
     axios({
         method: 'DELETE',
         url: url + `?Id_bodega=${id}`,
         responseType: 'json'
     }).then(res => {
-        GetAll();
+        console.log(res)
+        tablaBodega.removeChild(row)
     }).catch(error => {
         console.error(error);
     })
@@ -127,14 +127,14 @@ const actualizar = (bodega) => {
     })
 }
 
-const guardar = (bodega) => {
+const guardar = ({ nombreBodega }) => {
     axios({
         method: 'POST',
         url: url,
         responseType: 'json',
-        data: bodega
+        data: nombreBodega
     }).then(res => {
-        GetAll();
+        createNodo({ nombreBodega, idBodega: res.data.idBodega })
     }).catch(error => {
         console.error(error);
     })
